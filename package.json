@@ -1,5 +1,5 @@
 {
-  "name": "aws-s3-deploy",
+  "name": "deploy-aws-s3",
   "version": "1.0.0",
   "description": "Deploy static assets to s3",
   "main": "index.js",

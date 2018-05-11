@@ -1,12 +1,16 @@
-# aws-s3-deploy
+# deploy-aws-s3
+
 Simple script to deploy static website to s3
 
-Change the following in the code: 
+How to use:
 
-  ***accessKeyId***: 'your access key',
+```js
+const deploy = require('deploy-aws-s3');
 
-  ***secretAccessKey***: 'your secret key'
-
-  ***s3BucketName***: 'your bucket name',
-
-  ***folderPath***: 'your path to the folder of the static content e.g. ../build/'
+deploy({
+  accessKeyId: 'your access key',
+  secretAccessKey: 'your secret key',
+  s3BucketName: 'your bucket name',
+  folderPath: 'your path to the folder of the static content e.g. ../build/'
+})
+```
