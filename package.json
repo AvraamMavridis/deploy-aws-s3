@@ -1,0 +1,28 @@
+{
+  "name": "aws-s3-deploy",
+  "version": "1.0.0",
+  "description": "Deploy static assets to s3",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AvraamMavridis/aws-s3-deploy.git"
+  },
+  "keywords": [
+    "AWS",
+    "S3",
+    "Deploy"
+  ],
+  "author": "Avraam Mavridis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AvraamMavridis/aws-s3-deploy/issues"
+  },
+  "homepage": "https://github.com/AvraamMavridis/aws-s3-deploy#readme",
+  "dependencies": {
+    "aws-sdk": "^2.238.1",
+    "colors": "^1.2.4"
+  }
+}
