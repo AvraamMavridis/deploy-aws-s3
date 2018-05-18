@@ -23,6 +23,7 @@
   "homepage": "https://github.com/AvraamMavridis/aws-s3-deploy#readme",
   "dependencies": {
     "aws-sdk": "^2.238.1",
-    "colors": "^1.2.4"
+    "colors": "^1.2.4",
+    "mime-types": "^2.1.18"
   }
 }
