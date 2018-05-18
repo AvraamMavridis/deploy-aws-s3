@@ -2,6 +2,7 @@ const AWS = require('aws-sdk');
 const fs = require('fs');
 const colors = require('colors');
 const path = require('path');
+const mime = require('mime-types');
 
 const deploy = function deploy(options) {
   // For dev purposes only
@@ -22,6 +23,7 @@ const deploy = function deploy(options) {
 
   // resolve full folder path
   const distFolderPath = path.join(__dirname, config.folderPath);
+  const basePath = path.join(__dirname, config.folderPath);
 
   // recursively upload files
   const upload = function(distPath) {
@@ -53,11 +55,15 @@ const deploy = function deploy(options) {
             throw error;
           }
 
+          const key = filePath.replace(basePath, '');
+          const contentType = mime.lookup(key);
+
           // upload file to S3
           s3.putObject(
             {
               Bucket: config.s3BucketName,
-              Key: fileName,
+              Key: key,
+              ContentType: contentType,
               Body: fileContent
             },
             (err, res) => {
@@ -65,7 +71,7 @@ const deploy = function deploy(options) {
                 console.log(`Unable to upload '${fileName}'!`.red);
                 console.log(`'${err.message}'!`.red);
               } else {
-                console.log(`Successfully uploaded '${fileName}'!`.green);
+                console.log(`Successfully uploaded '${key}'! with content type ${contentType}`.green);
               }
             }
           );
