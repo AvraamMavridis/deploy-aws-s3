@@ -1,5 +1,7 @@
 # deploy-aws-s3
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/AvraamMavridis/deploy-aws-s3.svg)](https://greenkeeper.io/)
+
 Simple script to deploy static website to s3
 
 How to use:
